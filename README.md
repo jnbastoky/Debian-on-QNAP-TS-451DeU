@@ -3,12 +3,13 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 
 ## Hardware
 1. QNAP TS-451DeU or similar QNAP hardware
-2. Serial interface
-3. JST PH 4 pin female connector
+2. Serial interface[^1]
+3. JST PH 4 pin female connector[^2]
 4. USB drive
    
 ## Procedure
 1. 
 
 ## References
-- 
+[^1]: https://www.adafruit.com/product/954
+[^2]: https://www.adafruit.com/product/3955 
