@@ -11,5 +11,10 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 1. 
 
 ## References
+- https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
+- https://www.cyrius.com/debian/kirkwood/qnap/ts-219/install/
+- https://www.desgehtfei.net/serielle-konsole-fuer-qnap-mit-arduino/
+- https://wiki.qnap.com/wiki/System_Recovery_Mode
+
 [^1]: https://www.adafruit.com/product/954
 [^2]: https://www.adafruit.com/product/3955 
