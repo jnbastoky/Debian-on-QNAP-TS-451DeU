@@ -8,35 +8,39 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 4. USB drive
    
 ## Procedure
-1. Backup the QNAP
-   1. Open an SSH connection to the QNAP.
-   2. Backup the firmware.
-      ```bash
-      cat /dev/mmcblk0boot0 > mmcblk0boot0
-      cat /dev/mmcblk0boot1 > mmcblk0boot1
-      cat /dev/mmcblk0rpmb > mmcblk0rpmb
-      ```
-      Store these files for recovery.
-3. Create Debian installer on USB drive[^3]
-   1. Download iso
-   2. Copy to USB
-      ```bash
-      cp debian.iso /dev/sdX
-      sync
-      ```
-4. Power down QNAP
-5. Connect serial interface to QNAP
+### Backup the QNAP
+1. Open an SSH connection to the QNAP.
+2. Backup the firmware.
+   ```bash
+   cat /dev/mmcblk0boot0 > mmcblk0boot0
+   cat /dev/mmcblk0boot1 > mmcblk0boot1
+   cat /dev/mmcblk0rpmb > mmcblk0rpmb
+   ```
+   Store these files for recovery.
+
+### Create Debian installer on USB drive
+1. Download iso
+2. Copy to USB[^3]
+   ```bash
+   cp debian.iso /dev/sdX
+   sync
+   ```
+
+### Connect Serial Interface
+1. Power down the QNAP
+2. Connect serial interface to the QNAP
    1. Remove the top cover of the QNAP.
    2. The serial interface header (COM1) is located at the back near the power supply and in front of the middle fan.  Connect the JST PH 4-pin female cable to the header.
       ![QNAP Serial Header)](QNAP-serial-header.png)
       Use the following pin-out. _Do not connect the 5V power wire from the USB cable since the QNAP is already powered._
       ![QNAP Serial Connection (Breadboard)](QNAP-serial_bb.png)
-7. Open a serial console
+3. Open a serial console
    ```bash
    sudo screen /dev/ttyUSB0 115200
    ```
-8. Power on QNAP
-9. After system beep press `ESC` to enter the BIOS setup
+### Install OS
+1. Power on the QNAP
+2. After system beep press `ESC` to enter the BIOS setup
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
