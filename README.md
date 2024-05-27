@@ -18,7 +18,7 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
       ```
 4. Power down QNAP
 5. Connect serial interface to QNAP
-6. Open serail console
+6. Open serial console
    ```bash
    sudo screen /dev/ttyUSB0 115200
    ```
