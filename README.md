@@ -3,13 +3,21 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 
 ## Hardware
 1. QNAP TS-451DeU or similar QNAP hardware
-2. Serial interface[^1]
-3. JST PH 4 pin female connector[^2]
+2. USB Serial interface[^1]
+3. JST PH 4-pin female connector[^2]
 4. USB drive
    
 ## Procedure
-1. Backup QNAP
-2. Create Debian installer on USB drive[^3]
+1. Backup the QNAP
+   1. Open an SSH connection to the QNAP.
+   2. Backup the firmware.
+      ```bash
+      cat /dev/mmcblk0boot0 > mmcblk0boot0
+      cat /dev/mmcblk0boot1 > mmcblk0boot1
+      cat /dev/mmcblk0rpmb > mmcblk0rpmb
+      ```
+      Store these files for recovery.
+3. Create Debian installer on USB drive[^3]
    1. Download iso
    2. Copy to USB
       ```bash
@@ -18,8 +26,11 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
       ```
 4. Power down QNAP
 5. Connect serial interface to QNAP
+   1. Remove the top cover of the QNAP.
+   2. The serial interface header (COM1) is located at the back near the power supply and in front of the middle fan.  Connect the JST PH 4-pin female cable to the header.
+      ![QNAP Serial Header)](QNAP-serial-header.png)
+      Use the following pin-out. _Do not connect the 5V power wire from the USB cable since the QNAP is already powered._
       ![QNAP Serial Connection (Breadboard)](QNAP-serial_bb.png)
-   _Do not connect the power wire from the USB cable since the QNAP is already powered._
 7. Open a serial console
    ```bash
    sudo screen /dev/ttyUSB0 115200
