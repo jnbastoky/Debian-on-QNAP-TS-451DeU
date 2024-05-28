@@ -10,7 +10,8 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 ## Procedure
 ### Backup the QNAP
 1. Open an SSH connection to the QNAP.
-2. Backup the firmware.
+   You may need to enable SSH in the QNAP Control Panel.
+3. Backup the firmware.[^4]
    ```bash
    cat /dev/mmcblk0boot0 > mmcblk0boot0
    cat /dev/mmcblk0boot1 > mmcblk0boot1
@@ -55,4 +56,5 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 [^1]: https://www.adafruit.com/product/954
 [^2]: https://www.adafruit.com/product/3955 
 [^3]: https://www.debian.org/releases/stable/amd64/ch04s03.en.html
+[^4]: https://wiki.qnap.com/wiki/Debian_Installation_On_QNAP#Backup_your_data_/_partitions_on_flash_memory
 
