@@ -24,11 +24,11 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
    ```bash
    apt install simple-cdd
    ```
-2. Build installer iso.
+2. Build installer iso[^5]
    ```bash
    mkdir tmp-cdd
    cd tmp-cdd
-   build-simple-cdd --dist bookworm -s
+   build-simple-cdd --dist stable --serial-console --locale en_US
    ```
 4. Copy iso to USB[^3]
    ```bash
@@ -52,7 +52,7 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 1. Plug in the USB drive to the QNAP
 2. Power on the QNAP
 3. After system beep press `ESC` or `DEL` to enter the BIOS setup
-4. Under ___ menu select the USB drive
+4. Under the `Save & Exit` menu select the USB drive under the `Boot Override` section to boot the USB drive
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
@@ -63,9 +63,11 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 - https://www.reddit.com/r/qnap/comments/s1p1g8/truenas_core_on_the_qnap_ts451deu
 - https://www.reddit.com/r/qnap/comments/fwg2in/replace_qts_with_linux_server_distro_on_451/
 - https://teklager.se/en/knowledge-base/installing-debian-over-serial-console-apu-board/
+- https://sites.google.com/view/chewkeanho/guides/linux-os/simple-cdd/
 
 [^1]: https://www.adafruit.com/product/954
 [^2]: https://www.adafruit.com/product/3955 
 [^3]: https://www.debian.org/releases/stable/amd64/ch04s03.en.html
 [^4]: https://wiki.qnap.com/wiki/Debian_Installation_On_QNAP#Backup_your_data_/_partitions_on_flash_memory
+[^5]: https://wiki.debian.org/Simple-CDD/Howto
 
