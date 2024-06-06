@@ -54,7 +54,7 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 3. After system beep press `ESC` or `DEL` to enter the BIOS setup
 4. Under the `Save & Exit` menu select the USB drive under the `Boot Override` section to boot the USB drive
 5. Installer will start
-6. To change tabs in the installer press `CTRL+a`, `a`, tab number
+_Note_ To change tabs in the installer, for example, to see the log, press `CTRL+a`, `a`, tab number
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
