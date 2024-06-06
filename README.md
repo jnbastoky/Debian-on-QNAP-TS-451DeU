@@ -20,10 +20,19 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
    Store these files for recovery.
 
 ### Create Debian installer on USB drive
-1. Download iso
-2. Copy to USB[^3]
+1. Install `simple-cdd` package
    ```bash
-   cp debian.iso /dev/sdX
+   apt install simple-cdd
+   ```
+2. Build installer iso.
+   ```bash
+   mkdir tmp-cdd
+   cd tmp-cdd
+   build-simple-cdd --dist bookworm -s
+   ```
+4. Copy iso to USB[^3]
+   ```bash
+   cp .images/debian*.iso /dev/sdX
    sync
    ```
 
@@ -40,8 +49,10 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
    sudo screen /dev/ttyUSB0 115200
    ```
 ### Install OS
-1. Power on the QNAP
-2. After system beep press `ESC` to enter the BIOS setup
+1. Plug in the USB drive to the QNAP
+2. Power on the QNAP
+3. After system beep press `ESC` or `DEL` to enter the BIOS setup
+4. Under ___ menu select the USB drive
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
