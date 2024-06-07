@@ -67,6 +67,7 @@ _Note_ To change tabs in the installer, for example, to see the log, press `CTRL
 - https://teklager.se/en/knowledge-base/installing-debian-over-serial-console-apu-board/
 - https://sites.google.com/view/chewkeanho/guides/linux-os/simple-cdd/
 - https://salsa.debian.org/debian/simple-cdd
+- https://debian-handbook.info/browse/squeeze/sect.automated-installation.html
 
 [^1]: https://www.adafruit.com/product/954
 [^2]: https://www.adafruit.com/product/3955 
