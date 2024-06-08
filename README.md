@@ -19,22 +19,30 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
    ```
    Store these files for recovery.
 
-### Create Debian installer on USB drive
-1. Install `simple-cdd` package
+### Create Ubuntu installer on USB drive
+1. Download Ubuntu iso
+2. Copy to USB drive
+   ```bash
+   sudo dd if=mini.iso of=/dev/[Gerätebez.usbstick] bs=1M status=progress
+   sync
+   ```
+
+### ~~Create Debian installer on USB drive~~
+1. ~~Install `simple-cdd` package~~
    ```bash
    apt install simple-cdd
    ```
-2. Build installer iso[^5]
+2. ~~Build installer iso[^5]~~
    ```bash
    mkdir tmp-cdd
    cd tmp-cdd
    build-simple-cdd --dist stable --serial-console --locale en_US
    ```
-4. Copy iso to USB[^3]
+4. ~~Copy iso to USB[^3]~~
    ```bash
    cp .images/debian*.iso /dev/sdX
    sync
-   ```
+   ```~~
 
 ### Connect Serial Interface
 1. Power down the QNAP
@@ -54,7 +62,8 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 3. After system beep press `ESC` or `DEL` to enter the BIOS setup
 4. Under the `Save & Exit` menu select the USB drive under the `Boot Override` section to boot the USB drive
 5. Installer will start
-_Note_ To change tabs in the installer, for example, to see the log, press `CTRL+a`, `a`, tab number
+_Note_ To change tabs in the Debian installer, for example, to see the log, press `CTRL+a`, `a`, tab number
+6. Ubuntu should give you the option to use SSH at somepoint.  This gives a better experience.
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
@@ -74,4 +83,4 @@ _Note_ To change tabs in the installer, for example, to see the log, press `CTRL
 [^3]: https://www.debian.org/releases/stable/amd64/ch04s03.en.html
 [^4]: https://wiki.qnap.com/wiki/Debian_Installation_On_QNAP#Backup_your_data_/_partitions_on_flash_memory
 [^5]: https://wiki.debian.org/Simple-CDD/Howto
-
+[^6]: https://www.thomas-krenn.com/en/wiki/Installing_Ubuntu_20.04_via_a_serial_console
