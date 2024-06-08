@@ -23,7 +23,7 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 1. Download Ubuntu iso
 2. Copy to USB drive
    ```bash
-   sudo dd if=mini.iso of=/dev/[Gerätebez.usbstick] bs=1M status=progress
+   sudo dd if=mini.iso of=/dev/sdX bs=1M status=progress
    sync
    ```
 
@@ -42,7 +42,7 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
    ```bash
    cp .images/debian*.iso /dev/sdX
    sync
-   ```~~
+   ```
 
 ### Connect Serial Interface
 1. Power down the QNAP
@@ -61,9 +61,13 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 2. Power on the QNAP
 3. After system beep press `ESC` or `DEL` to enter the BIOS setup
 4. Under the `Save & Exit` menu select the USB drive under the `Boot Override` section to boot the USB drive
-5. Installer will start
-_Note_ To change tabs in the Debian installer, for example, to see the log, press `CTRL+a`, `a`, tab number
-6. Ubuntu should give you the option to use SSH at somepoint.  This gives a better experience.
+5. Installer will start.
+      ~~_Note_: To change tabs in the Debian installer, for example, to see the log, press `CTRL+a`, `a`, tab number~~
+6. Edit Grub install entry with `console=tty0 console=ttyS0,115200n8`.  The `linux` line should look something like this
+   ```
+   linux /linux --- console=tty0 console=ttyS0,115200n8
+   ```
+8. Ubuntu should eventurally give you the option to use SSH to continue the install.  This gives a better experience.
 
 ## References
 - https://www.reddit.com/r/qnap/comments/ttm5db/gaining_access_to_the_ts451deu/
