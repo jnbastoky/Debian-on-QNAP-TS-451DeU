@@ -46,13 +46,14 @@ The QNAP TS-451DeU NAS server is only capable for operating in a headless mode. 
 
 ### Connect Serial Interface
 1. Power down the QNAP
-2. Connect serial interface to the QNAP
+2. Remove the cover
+3. Connect serial interface to the QNAP
    1. Remove the top cover of the QNAP.
    2. The serial interface header (COM1) is located at the back near the power supply and in front of the middle fan.  Connect the JST PH 4-pin female cable to the header.
       ![QNAP Serial Header)](QNAP-serial-header.png)
       Use the following pin-out. _Do not connect the 5V power wire from the USB cable since the QNAP is already powered._
       ![QNAP Serial Connection (Breadboard)](QNAP-serial_bb.png)
-3. Open a serial console
+4. Open a serial console
    ```bash
    sudo screen /dev/ttyUSB0 115200
    ```
